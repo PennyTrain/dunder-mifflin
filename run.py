@@ -50,7 +50,7 @@ def initial_start():
         with something random! Please try again!
                       (✿◠‿◠)
          """)
-        initial_start()
+       # initial_start()
 
 def main_menu():
     """
@@ -89,7 +89,8 @@ def rules():
             else:
                 main_menu()
     except Exception:
-        print("""༻✦༺ So sorry! ༻✦༺
+        print("""
+                ༻✦༺ So sorry! ༻✦༺
          It appears you have not chosen 'm' 
          and have entirely missed the mark 
         with something random! Please try again!
@@ -99,21 +100,20 @@ def rules():
         main_menu()
 
 def quit():
+    """
+    This enables the player to exit the quiz
+    """
     clear()
     initial_start()
 
 def quiz_management():
+    """
+    Here manages the quiz with what functions to run when the player enters.
+    """
     clear()
     print("in quiz")
-    question_amount = get_question_amount()
-    username = get_username()
-    score = 0
-    get_question_randomer()
-
-    
-def get_question_randomer():
-    random_question = random.choice(office_questions)
-    print(random_question)
+    get_question_amount()
+    get_username()
 
 def get_username():
     """
@@ -125,23 +125,52 @@ def get_username():
             print(f'Hello and welcome {username}!♥‿♥')
             break
         else:
-            print("Any old username will do (⌒▽⌒)")
+            print(
+                """
+                ༻✦༺ So sorry! ༻✦༺
+         It appears you have not chosen a
+         long enough username, and have entirely 
+         missed the mark with something random! 
+                 Please try again!
+                      (✿◠‿◠)
+         """)
             break
 
 def get_question_amount():
     """
-    This function enables the player to choo
+    This function enables the player to choose the amount of questions they have!
     """
     while True: 
         try:
             question_number = int(input("Please choose how many questions you would like! 5, 10 or 15?"))
             if question_number in [5, 10, 15]:
-                print(f"You have chosen to have {question_number} questions!")
+                print(f"You have chosen to have 𓆩*𓆪 {question_number} 𓆩*𓆪 questions!")
                 break
             else:
-                print("I'm sorry, that answer was not recognized! Please try putting 5, 10 or 15!")
+                print(""""
+                ༻✦༺ So sorry! ༻✦༺
+         It appears you have not chosen between 5, 
+         10 or 15 and have entirely missed the mark 
+         with something random! Please try again!
+                      (✿◠‿◠)
+         """)
         except ValueError:
-            print("So sorry!!! Please try to enter a number!")
+            print("""
+                ༻✦༺ So sorry! ༻✦༺
+         It appears you have not chosen between 5, 
+         10 or 15 and have entirely missed the mark 
+         with something random! Please try again!
+                      (✿◠‿◠)
+         """)
+    
+def get_question_randomer():
+    """
+    This function gets a random question.
+    """
+    random_question = random.choice(office_questions)
+    
+
+
 
 def menu_selection():
     """
