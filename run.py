@@ -50,7 +50,7 @@ def initial_start():
         with something random! Please try again!
                       (✿◠‿◠)
          """)
-       # initial_start()
+        initial_start()
 
 def main_menu():
     """
@@ -112,8 +112,8 @@ def quiz_management():
     """
     clear()
     print("in quiz")
-    get_question_amount()
     get_username()
+    get_question_amount
 
 def get_username():
     """
@@ -142,9 +142,9 @@ def get_question_amount():
     """
     while True: 
         try:
-            question_number = int(input("Please choose how many questions you would like! 5, 10 or 15?"))
-            if question_number in [5, 10, 15]:
-                print(f"You have chosen to have 𓆩*𓆪 {question_number} 𓆩*𓆪 questions!")
+            question_amount = int(input("Please choose how many questions you would like! 5, 10 or 15?"))
+            if question_amount in [5, 10, 15]:
+                print(f"You have chosen to have 𓆩*𓆪 {question_amount} 𓆩*𓆪 questions!")
                 break
             else:
                 print(""""
@@ -163,15 +163,60 @@ def get_question_amount():
                       (✿◠‿◠)
          """)
     
-def get_question_randomer():
+def get_question_randomer(question_amount):
     """
     This function gets a random question.
     """
-    random_question = random.choice(office_questions)
+    asked_questions = []
+    questions = []
+    while len(questions) < question_amount:
+        x = random.randint(0, (len(office_questions) - 1))
+        if x not in asked_questions: 
+            asked_questions.append(x)
+            questions.append(office_questions[x])
+    return questions
+
+def get_show_question(questions, question_amount):
+    print("in question")
+    i = 0
+    score = 0
+    while i < question_amount:
+        print(questions[i]["question"])
+        print(f"{questions[i]['answers'][0]}")
+        print(f"{questions[i]['answers'][1]}")
+        print(f"{questions[i]['answers'][2]}")
+        answer_result = check_answer(questions[i])
+        player_answer = player_input()
+        if player_answer == answer_result:
+            score += 1
+        else:
+            print("Oh no")
+        i = i + 1
+        return score
+
+def get_player_input():
+    print("Please select (a, b, c):\n")
+    while True:
+        try:
+            player_answer = input("a, b or c:\n")
+            player_answer = int(player_answer)
+            print(f"You selected {int(player_answer)}!")
+            if player_answer not in [a, b, c]:
+                raise Exception
+            else:
+                return player_answer
+        except Exception:
+            print("no")
+
+def get_check_answer():
+    if questions['correct'] == questions['answers'][0]:
+        return 1
+    elif questions['correct'] == questions['answers'][1]:
+        return 2
+    elif questions['correct'] == questions['answers'][2]:
+        return 3
+
     
-
-
-
 def menu_selection():
     """
     This function allows players to choose which option they would like!
@@ -201,6 +246,7 @@ def menu_selection():
                       (✿◠‿◠)
          ''')
         user_main_menu()
+
 
 
 
