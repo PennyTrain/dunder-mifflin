@@ -31,17 +31,17 @@ def initial_start():
     This prints what the user first sees when they open the Dunder Mifflin quiz!
     It asks them if they are ready to play and if they are not it returnts to initial start.
     """
-    clear()
+    # clear()
     print("Are you ready the best Dunder Mifflin quiz?🥰\n")
     print("｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡\n")
     print("Please press 's' when you are ready to start!")
     try:
         while True:
             return_to_menu = input("")
-            if return_to_menu not in ["s"]:
-                raise Exception
-            else:
+            if return_to_menu == "s":
                 main_menu()
+            else:
+                raise Exception
     except Exception:
         print("""
                 ༻✦༺ So sorry! ༻✦༺
@@ -56,7 +56,7 @@ def main_menu():
     """
     This displays the main menu and runs the function menu_selection
     """
-    clear()
+    # clear()
     print(
         """
         ‿︵‿︵ʚ˚̣̣̣͙ɞ・❉  Main Menu  ❉・ ʚ˚̣̣̣͙ɞ‿︵‿︵\n
@@ -70,7 +70,7 @@ def main_menu():
     menu_selection()
 
 def rules():
-    clear()
+    # clear()
     print(
         """
               Rules
@@ -84,10 +84,10 @@ def rules():
     try:
         while True:
             return_to_menu = input("")
-            if return_to_menu not in ["m"]:
-                raise Exception
-            else:
+            if return_to_menu == "m":
                 main_menu()
+            else:
+                raise Exception
     except Exception:
         print("""
                 ༻✦༺ So sorry! ༻✦༺
@@ -96,34 +96,35 @@ def rules():
         with something random! Please try again!
                       (✿◠‿◠)
          """)
-        clear()
         main_menu()
 
 def quit():
     """
     This enables the player to exit the quiz
     """
-    clear()
+    # clear()
     initial_start()
 
 def quiz_management():
     """
     Here manages the quiz with what functions to run when the player enters.
     """
-    clear()
-    print("in quiz")
-    get_username()
-    get_question_amount
+    # clear()
+    username = get_username()
+    question_amount = get_question_amount()
+    questions = get_question_randomer(question_amount)
+    score = get_show_question(questions, question_amount)
+    print(f"Your final score is: {score}/{question_amount}")
 
 def get_username():
     """
-    Gets the players username and ensures it is longer than 2 characters.
+    Gets the player's username and ensures it is longer than 2 characters.
     """
-    username = input("Enter username:")
     while True:
+        username = input("Enter username: ")
         if len(username) >= 2:
-            print(f'Hello and welcome {username}!♥‿♥')
-            break
+            print(f'Hello and welcome, {username}! ♥‿♥')
+            return username
         else:
             print(
                 """
@@ -134,18 +135,19 @@ def get_username():
                  Please try again!
                       (✿◠‿◠)
          """)
-            break
+
 
 def get_question_amount():
     """
     This function enables the player to choose the amount of questions they have!
     """
+    valid_choices = [5, 10, 15]
     while True: 
         try:
             question_amount = int(input("Please choose how many questions you would like! 5, 10 or 15?"))
-            if question_amount in [5, 10, 15]:
+            if question_amount in valid_choices:
                 print(f"You have chosen to have 𓆩*𓆪 {question_amount} 𓆩*𓆪 questions!")
-                break
+                return question_amount
             else:
                 print(""""
                 ༻✦༺ So sorry! ༻✦༺
@@ -170,51 +172,53 @@ def get_question_randomer(question_amount):
     asked_questions = []
     questions = []
     while len(questions) < question_amount:
-        x = random.randint(0, (len(office_questions) - 1))
+        x = random.randint(0, len(office_questions) - 1)
         if x not in asked_questions: 
             asked_questions.append(x)
             questions.append(office_questions[x])
     return questions
 
 def get_show_question(questions, question_amount):
-    print("in question")
     i = 0
     score = 0
     while i < question_amount:
-        print(questions[i]["question"])
-        print(f"{questions[i]['answers'][0]}")
-        print(f"{questions[i]['answers'][1]}")
-        print(f"{questions[i]['answers'][2]}")
-        answer_result = check_answer(questions[i])
-        player_answer = player_input()
+        print(questions[i]["question"]) 
+        #that prints the three choices in the question
+        for j, choice in enumerate(questions[i]["answers"]):
+            print(f"{j + 1}. {choice}")
+        player_answer = get_player_input()
+        answer_result = get_check_answer(questions[i])
         if player_answer == answer_result:
+            print("in if statement")
+            print(player_answer)
+            print(answer_result)
+            print(i)
             score += 1
         else:
-            print("Oh no")
-        i = i + 1
-        return score
+            print("Oh no this question was answered wrong unlucky!")
+        i += 1
+    return score
 
 def get_player_input():
     print("Please select (a, b, c):\n")
     while True:
         try:
             player_answer = input("a, b or c:\n")
-            player_answer = int(player_answer)
-            print(f"You selected {int(player_answer)}!")
-            if player_answer not in [a, b, c]:
-                raise Exception
-            else:
+            if player_answer in ['a', 'b', 'c']:
                 return player_answer
+            else:
+                raise Exception
         except Exception:
-            print("no")
+            print("NOOOOOOOOO try a correct")
+            
 
-def get_check_answer():
-    if questions['correct'] == questions['answers'][0]:
-        return 1
-    elif questions['correct'] == questions['answers'][1]:
-        return 2
-    elif questions['correct'] == questions['answers'][2]:
-        return 3
+def get_check_answer(questions):
+    if questions["correct"] == "a":
+        return "a"
+    elif questions["correct"] == "b":
+        return "b"
+    elif questions["correct"] == "c":
+        return "c"
 
     
 def menu_selection():
@@ -237,18 +241,17 @@ def menu_selection():
                 elif option == 'q':
                     initial_start()
                     break
+                else:
+                    raise Exception
     except Exception:
-        clear()
+        # clear()
         print('''༻✦༺ So sorry! ༻✦༺
         It appears you have not chosen 'p', 'r' 
         or 'q' and have entirely missed the mark 
         with something random! Please try again!
                       (✿◠‿◠)
          ''')
-        user_main_menu()
-
-
-
-
+        main_menu()
 
 initial_start()
+
