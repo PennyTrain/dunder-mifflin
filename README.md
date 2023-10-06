@@ -1,5 +1,30 @@
+# The Dunder Mifflin Quiz
 
+## Introduction
 
+* The Dunder Mifflin quiz is inspired by a very popular American TV show such as The Office, the quiz asks a range of trivia questions derived from the show. 
+[View live project here]()
+
+## User Experience
+
+### User Stories
+
+#### First Time Visitor Goals
+
+#### Returning Visitor Goals
+
+#### Frequent Visitor Goals
+
+#### Organization Goals
+
+### Flow Chart
+
+### Languages Used
+
+* [HTML](https://en.wikipedia.org/wiki/HTML)
+* [CSS](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 
 
