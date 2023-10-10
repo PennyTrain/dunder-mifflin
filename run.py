@@ -117,6 +117,32 @@ def quiz_management():
     score = get_show_question(questions, question_amount)
     game_ending = end_of_game()
 
+def end_of_game():
+    clear()
+    print(f"""
+            End Of Game!
+Your score was: {score}/{question_amount}
+        Would you like to play
+                again?
+        If so please press 'p'
+    """)
+    try:
+        while True:
+            return_to_menu = input("")
+            if return_to_menu == "p":
+                main_menu()
+            else:
+                raise Exception
+    except Exception:
+        print("""
+                ༻✦༺ So sorry! ༻✦༺
+         It appears you have not chosen 'p' 
+         and have entirely missed the mark 
+        with something random! Please try again!
+                      (✿◠‿◠)\n
+         """)
+    time.sleep(5.0)
+
 def get_username():
     """
     Gets the player's username and ensures it is longer than 2 characters.
@@ -227,14 +253,6 @@ def get_check_answer(questions):
         return "b"
     elif questions["correct"] == "c":
         return "c"
-
-def end_of_game():
-    clear()
-    print(f"""
-            End Of Game!
-            Your score was: {score}/{question_amount}
-    """)
-    time.sleep(5.0)
     
 def menu_selection():
     """
@@ -257,7 +275,6 @@ def menu_selection():
                     initial_start()
                     break
     except Exception:
-        clear()
         print('''
                 ༻✦༺ So sorry! ༻✦༺
         It appears you have not chosen 'p', 'r' 
@@ -265,6 +282,7 @@ def menu_selection():
         with something random! Please try again!
                       (✿◠‿◠)\n
          ''')
+    
         time.sleep(3.0)
         main_menu()
 
