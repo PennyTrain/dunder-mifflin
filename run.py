@@ -32,7 +32,7 @@ def initial_start():
     """
     clear()
     print("Are you ready the best Dunder Mifflin quiz?🥰\n")
-    print("｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡\n")
+    print("｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡\n")
     print("Please press 's' when you are ready to start!\n")
     try:
         while True:
@@ -115,7 +115,6 @@ def quiz_management():
     question_amount = get_question_amount()
     questions = get_question_randomer(question_amount)
     score = get_show_question(questions, question_amount)
-    print(f"Your final score is: {score}/{question_amount}\n")
     game_ending = end_of_game()
 
 def get_username():
@@ -234,8 +233,8 @@ def end_of_game():
     print(f"""
             End Of Game!
             Your score was: {score}/{question_amount}
-    
     """)
+    time.sleep(5.0)
     
 def menu_selection():
     """
@@ -257,8 +256,6 @@ def menu_selection():
                 elif option == 'q':
                     initial_start()
                     break
-                else:
-                    raise Exception
     except Exception:
         clear()
         print('''

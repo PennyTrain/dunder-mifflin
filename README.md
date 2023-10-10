@@ -4,20 +4,42 @@
 
 * The Dunder Mifflin quiz is inspired by a very popular American TV show such as The Office, the quiz asks a range of trivia questions derived from the show. 
 [View live project here]()
+* As the game was developed in Python for use in the terminal, it utilizes the Code Institute Python Template to generate a "terminal" onto the page, making it available within a web browser.
+![Screenshot of the initial start in the terminal](./assets/imgs/readme/initial_start.png)
 
 ## User Experience
 
 ### User Stories
 
 #### First Time Visitor Goals
+--- 
+ 1. As a first time visitor, I want the game to be clear.
+ 2. As a first time visitor, I want to easily navigate the game.
+ 3. As a first time visitor, I want the game to be as aesthetically pleasing as possible given the limited resources.
 
 #### Returning Visitor Goals
+---
+ 1. As a returning visitor, I want to enjoy the game.
+ 2. As a returning visitor, I want to play and show friends.
+ 3. As a returning visitor, I want to have a range of questions.
 
 #### Frequent Visitor Goals
+---
+ 1. As a frequent visitor, I want to be able to play with different questions.
+ 2. As a frequent visitor, I want the game to be consistent.
+ 3. As a frequent visitor, I want to enjoy playing!
 
 #### Organization Goals
+---
+ 1. As an organization we want to promote and make the game more popular.
+ 2. As an organization we want to have a base of people who play for when we realease new games.
+ 3. As an organization we want to be easily accessible to interested parties.
 
 ### Flow Chart
+---
+* The flow chart is made to demonstrate how the games functionality was planned. However since, after the game has been played it goes back to the inital start.
+![The flow chart](./assets/imgs/readme/flow-chart.png)
+
 
 ### Languages Used
 
@@ -26,6 +48,10 @@
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
+### Future Enhancements
+---
+* In the future, I would love to add a working leaderboard.
+* In the future, I would add more questions for players so that there were atleast 50+.
 
 
 
@@ -33,7 +59,8 @@
 
 
 
-## Deployment
+
+### Deployment
 The site was deployed via Heroku, and the live link can be found here - [MY QUIZ]()
 The project was developed utilizing a Code Institute provided template. During the development of the project, the template was updated to increase functionality. I switched over to the new template mid-project which you can see within the commit history. Some of the deployment steps below are specifically required for the new CI template and may not apply to older versions, or different projects.
 Project Deployment
@@ -65,7 +92,7 @@ Once in the file, Because I am including packages in the requirements.txt file. 
 and
 2: how to freeze the commands for a local copy of this project on their own account (pip3 freeze --local > requirements.txt)
 
-## Credits 
+### Credits 
 
 ### Content
 
