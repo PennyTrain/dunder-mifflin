@@ -52,8 +52,21 @@
 ---
 * In the future, I would love to add a working leaderboard.
 * In the future, I would add more questions for players so that there were atleast 50+.
+* In the future, I would like to include select question themes, perhaps have questions all about Micheal, Pam or Dwight!
 
+### Features
+---
+* Inside the quiz it will enable you to choose a username!
+---
+![Screenshot of the username function in action](./assets/imgs/readme/username.png)
 
+* The quiz enables you to choose how many questions you would like
+---
+![Screenshot of the question choice function in action](./assets/imgs/readme/question_selection.png)
+
+* Along with that the questions are randomized, therefore players will not recieve the same question inside the same quiz. As well as that when the game is next played there will be a variety of questions available!
+---
+![Screenshot of a question in the quiz](./assets/imgs/readme/random_questions.png)
 
 
 
