@@ -25,12 +25,14 @@ def clear():
     This clears the terminal ready for new content!
     """
     os.system("cls" if os.name == "nt" else "clear")
-    
+
 
 def initial_start():
     """
-    This prints what the user first sees when they open the Dunder Mifflin quiz!
-    It asks them if they are ready to play and if they are not it returnts to initial start.
+    This prints what the user first sees when they
+    open the Dunder Mifflin quiz!
+    It asks them if they are ready to play
+    and if they are not it returnts to initial start.
     """
     clear()
     print("Are you ready the best Dunder Mifflin quiz?🥰\n")
@@ -47,12 +49,13 @@ def initial_start():
         print("""
                 ༻✦༺ So sorry! ༻✦༺
          It appears you have not chosen 's'
-         and have entirely missed the mark 
+         and have entirely missed the mark
         with something random! Please try again!
                       (✿◠‿◠)\n
          """)
         time.sleep(2.0)
         initial_start()
+
 
 def main_menu():
     """
@@ -71,6 +74,7 @@ def main_menu():
     """)
     menu_selection()
 
+
 def rules():
     clear()
     print(
@@ -80,7 +84,7 @@ def rules():
     Once you have chosen your
     answer to a question please
     select 'a', 'b' or 'c'.
-    Press 'm' to return to the 
+    Press 'm' to return to the
            main menu!\n
     """)
     try:
@@ -93,13 +97,14 @@ def rules():
     except Exception:
         print("""
                 ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen 'm' 
-         and have entirely missed the mark 
+         It appears you have not chosen 'm'
+         and have entirely missed the mark
         with something random! Please try again!
                       (✿◠‿◠)\n
          """)
         time.sleep(3.0)
         main_menu()
+
 
 def quit():
     """
@@ -107,6 +112,7 @@ def quit():
     """
     clear()
     initial_start()
+
 
 def quiz_management():
     """
@@ -118,6 +124,7 @@ def quiz_management():
     questions = get_question_randomer(question_amount)
     score = get_show_question(questions, question_amount)
     game_ending = end_of_game(score, question_amount)
+
 
 def end_of_game(score, question_amount):
     clear()
@@ -138,12 +145,13 @@ Your score was: {score}/{question_amount}
     except Exception:
         print("""
                 ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen 'p' 
-         and have entirely missed the mark 
+         It appears you have not chosen 'p'
+         and have entirely missed the mark
         with something random! Please try again!
                       (✿◠‿◠)\n
          """)
     time.sleep(5.0)
+
 
 def get_username():
     """
@@ -159,29 +167,35 @@ def get_username():
                 """
                 ༻✦༺ So sorry! ༻✦༺
          It appears you have not chosen a
-         long enough username, and have entirely 
-         missed the mark with something random! 
+         long enough username, and have entirely
+         missed the mark with something random!
                  Please try again!
                       (✿◠‿◠)\n
          """)
         time.sleep(3.0)
 
+
 def get_question_amount():
     """
-    This function enables the player to choose the amount of questions they have!
+    This function enables the player to choose
+    the amount of questions they have!
     """
     valid_choices = [5, 10, 15]
-    while True: 
+    while True:
         try:
-            question_amount = int(input("Please choose how many questions you would like! 5, 10 or 15?\n"))
+            question_amount = int(input("""
+            Please choose how many questions you would like! 5, 10 or 15?\n
+            """))
             if question_amount in valid_choices:
-                print(f"You have chosen to have 𓆩*𓆪 {question_amount} 𓆩*𓆪 questions!\n")
+                print(f"""
+                You have chosen to have
+                𓆩*𓆪 {question_amount} 𓆩*𓆪 questions!\n""")
                 return question_amount
             else:
                 print("""
                 ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen between 5, 
-         10 or 15 and have entirely missed the mark 
+         It appears you have not chosen between 5,
+         10 or 15 and have entirely missed the mark
          with something random! Please try again!
                       (✿◠‿◠)\n
          """)
@@ -189,13 +203,14 @@ def get_question_amount():
         except ValueError:
             print("""
                 ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen between 5, 
-         10 or 15 and have entirely missed the mark 
+         It appears you have not chosen between 5,
+         10 or 15 and have entirely missed the mark
          with something random! Please try again!
                       (✿◠‿◠)\n
          """)
         time.sleep(3.0)
-    
+
+
 def get_question_randomer(question_amount):
     """
     This function gets a random question.
@@ -204,30 +219,32 @@ def get_question_randomer(question_amount):
     questions = []
     while len(questions) < question_amount:
         x = random.randint(0, len(office_questions) - 1)
-        if x not in asked_questions: 
+        if x not in asked_questions:
             asked_questions.append(x)
             questions.append(office_questions[x])
     return questions
+
 
 def get_show_question(questions, question_amount):
     i = 0
     score = 0
     while i < question_amount:
-        print(questions[i]["question"]) 
-        #that prints the three choices in the question
+        print(questions[i]["question"])
+        """
+        that prints the three choices in the question
+        """
         for j, choice in enumerate(questions[i]["answers"]):
             print(f"{j + 1}. {choice}")
         player_answer = get_player_input()
         answer_result = get_check_answer(questions[i])
         if player_answer == answer_result:
             print("Wooohoo! You got it right!ᕦ( ˘ᴗ˘ )ᕤ\n")
-            #time.sleep(3.0)
             score += 1
         else:
             print("Oh no you got it wrong, unlucky!(๑•́_•̀๑)\n")
-            #time.sleep(3.0)
         i += 1
     return score
+
 
 def get_player_input():
     print("Please select (a, b, c):\n")
@@ -241,13 +258,14 @@ def get_player_input():
         except Exception:
             print("""
                 ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen between a, 
-         b or c and have entirely missed the mark 
+         It appears you have not chosen between a,
+         b or c and have entirely missed the mark
          with something random! Please try again!
                       (✿◠‿◠)\n
             """)
             time.sleep(3.0)
-            
+
+
 def get_check_answer(questions):
     if questions["correct"] == "a":
         return "a"
@@ -255,11 +273,14 @@ def get_check_answer(questions):
         return "b"
     elif questions["correct"] == "c":
         return "c"
-    
+
+
 def menu_selection():
     """
-    This function allows players to choose which option they would like!
-    It also raises an exception if their input is not valid and recognized by the code.
+    This function allows players to choose
+    which option they would like!
+    It also raises an exception if their input
+    is not valid and recognized by the code.
     """
     try:
         while True:
@@ -279,14 +300,14 @@ def menu_selection():
     except Exception:
         print('''
                 ༻✦༺ So sorry! ༻✦༺
-        It appears you have not chosen 'p', 'r' 
-        or 'q' and have entirely missed the mark 
+        It appears you have not chosen 'p', 'r'
+        or 'q' and have entirely missed the mark
         with something random! Please try again!
                       (✿◠‿◠)\n
          ''')
-    
+
         time.sleep(3.0)
         main_menu()
 
-initial_start()
 
+initial_start()
