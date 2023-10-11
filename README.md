@@ -62,11 +62,23 @@
 
 * The quiz enables you to choose how many questions you would like
 ---
-![Screenshot of the question choice function in action](./assets/imgs/readme/question_selection.png)
+![Screenshot of the question choice function in action](./assets/imgs/readme/question-selection.png)
 
 * Along with that the questions are randomized, therefore players will not recieve the same question inside the same quiz. As well as that when the game is next played there will be a variety of questions available!
 ---
-![Screenshot of a question in the quiz](./assets/imgs/readme/random_questions.png)
+![Screenshot of a question in the quiz](./assets/imgs/readme/random-questions.png)
+
+### Testing
+---
+* I ran my run.py file code through this validator [Pep8 validator](https://pep8ci.herokuapp.com/#)
+![Screenshot of the run.py file validator](./assets/imgs/readme/python-validator-run.png)
+
+* I ran my questions.py file code through this validator [Pep8 validator](https://pep8ci.herokuapp.com/#)
+![Screenshot of the questions.py file validator](./assets/imgs/readme/python-validator-questions.png)
+
+
+
+
 
 
 
