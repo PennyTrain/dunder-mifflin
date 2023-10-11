@@ -19,11 +19,13 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('theOfficeQuestions')
 
+
 def clear():
     """
     This clears the terminal ready for new content!
     """
     os.system("cls" if os.name == "nt" else "clear")
+    
 
 def initial_start():
     """
@@ -44,7 +46,7 @@ def initial_start():
     except Exception:
         print("""
                 ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen 's' 
+         It appears you have not chosen 's'
          and have entirely missed the mark 
         with something random! Please try again!
                       (✿◠‿◠)\n
@@ -115,21 +117,21 @@ def quiz_management():
     question_amount = get_question_amount()
     questions = get_question_randomer(question_amount)
     score = get_show_question(questions, question_amount)
-    game_ending = end_of_game()
+    game_ending = end_of_game(score, question_amount)
 
-def end_of_game():
+def end_of_game(score, question_amount):
     clear()
     print(f"""
             End Of Game!
 Your score was: {score}/{question_amount}
         Would you like to play
                 again?
-        If so please press 'p'
+        If so please press 'z'
     """)
     try:
         while True:
             return_to_menu = input("")
-            if return_to_menu == "p":
+            if return_to_menu == "z":
                 main_menu()
             else:
                 raise Exception
@@ -219,11 +221,11 @@ def get_show_question(questions, question_amount):
         answer_result = get_check_answer(questions[i])
         if player_answer == answer_result:
             print("Wooohoo! You got it right!ᕦ( ˘ᴗ˘ )ᕤ\n")
-            time.sleep(3.0)
+            #time.sleep(3.0)
             score += 1
         else:
             print("Oh no you got it wrong, unlucky!(๑•́_•̀๑)\n")
-            time.sleep(3.0)
+            #time.sleep(3.0)
         i += 1
     return score
 
