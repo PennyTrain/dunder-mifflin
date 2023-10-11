@@ -45,12 +45,10 @@ def initial_start():
             break
         else:
             print("""
-                ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen 's'
-         and have entirely missed the mark
-        with something random! Please try again!
-                      (✿◠‿◠)\n
-         """)
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen 's'
+Please try again!(✿◠‿◠)\n
+                """)
 
 
 def main_menu():
@@ -92,12 +90,10 @@ def rules():
             break
         else:
             print("""
-                ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen 'm'
-         and have entirely missed the mark
-        with something random! Please try again!
-                      (✿◠‿◠)\n
-         """)
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen 'm'
+Please try again!(✿◠‿◠)\n
+                """)
 
 
 def quit():
@@ -130,15 +126,12 @@ def get_username():
             print(f'Hello and welcome, {username}! ♥‿♥\n')
             return username
         else:
-            print(
-                """
-                ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen a
-         long enough username, and have entirely
-         missed the mark with something random!
-                 Please try again!
-                      (✿◠‿◠)\n
-         """)
+            print("""
+    ༻✦༺ So sorry! ༻✦༺
+It appears your username is too
+short Please try again!
+        (✿◠‿◠)\n
+                """)
         time.sleep(3.0)
 
 
@@ -155,26 +148,24 @@ Please choose how many questions you would like! 5, 10 or 15?\n
             """))
             if question_amount in valid_choices:
                 print(f"""
-                You have chosen to have
-                𓆩*𓆪 {question_amount} 𓆩*𓆪 questions!\n""")
+You have chosen to have
+𓆩*𓆪 {question_amount} 𓆩*𓆪 questions!\n""")
                 return question_amount
             else:
                 print("""
-                ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen between 5,
-         10 or 15 and have entirely missed the mark
-         with something random! Please try again!
-                      (✿◠‿◠)\n
-         """)
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen '5',
+ '10' or '15'  Please try again!
+        (✿◠‿◠)\n
+                """)
                 time.sleep(3.0)
         except ValueError:
             print("""
-                ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen between 5,
-         10 or 15 and have entirely missed the mark
-         with something random! Please try again!
-                      (✿◠‿◠)\n
-         """)
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen '5',
+ '10' or '15'  Please try again!
+        (✿◠‿◠)\n
+                """)
         time.sleep(3.0)
 
 
@@ -223,14 +214,13 @@ def get_player_input():
             else:
                 raise Exception
         except Exception:
-            print("""
-                ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen between a,
-         b or c and have entirely missed the mark
-         with something random! Please try again!
-                      (✿◠‿◠)\n
-            """)
-            time.sleep(3.0)
+                print("""
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen 'a',
+ 'b' or 'c'  Please try again!
+        (✿◠‿◠)\n
+                """)
+                time.sleep(3.0)
 
 
 def get_check_answer(questions):
@@ -260,12 +250,10 @@ def end_of_game(score, question_amount, username):
             break
         else:
             print("""
-                ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen 'z'
-         and have entirely missed the mark
-        with something random! Please try again!
-                      (✿◠‿◠)\n
-         """)
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen 'z',
+Please try again!(✿◠‿◠)\n
+                """)
 
 
 def leaderboard_update(username, score, question_amount):
@@ -298,13 +286,12 @@ def leaderboard_selection():
     while True:
         option = input("")
         if option not in ["5", "10", "15"]:
-            print('''
-                ༻✦༺ So sorry! ༻✦༺
-        It appears you have not chosen '1', '2'
-        or '3' and have entirely missed the mark
-        with something random! Please try again!
-                      (✿◠‿◠)\n
-            ''')
+                print("""
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen '5',
+ '10' or '15'  Please try again!
+        (✿◠‿◠)\n
+                """)
         else:
             if option == '5':
                 users_choice = 5
@@ -318,8 +305,8 @@ def leaderboard_selection():
             else:
                 print("""
     ༻✦༺ So sorry! ༻✦༺
-It appears you have not chosen '1',
- '2' or '3'  Please try again!
+It appears you have not chosen '5',
+ '10' or '15'  Please try again!
         (✿◠‿◠)\n
                 """)
                 continue
@@ -350,21 +337,31 @@ def get_scoresheet_list(rounds, position):
 
 def leaderboard_screen(users_choice):
     clear()
-    print("Leader screen")
+    print("""
+    Leaderboard
+    """)
     # THIS IS GETTING MY ARRAY OF FIRST SECOND AND THIRD PLACE AND PRINTING OUT
     first_place = get_scoresheet_list(users_choice, 1)
     second_place = get_scoresheet_list(users_choice, 2)
     third_place = get_scoresheet_list(users_choice, 3)
-    print(first_place)
-    print(second_place)
-    print(third_place)
-    print('First place is:')
-    time.sleep(1.0)
+    print('First place is...')
+    time.sleep(2.0)
     print(first_place[0])
-    print('Their score was:')
+    print('Their score was...')
+    time.sleep(2.0)
     print(first_place[1])
-    print(second_place[0], second_place[1])
-    print(third_place[0], third_place[1])
+    print('Second place is...')
+    time.sleep(1.5)
+    print(second_place[0])
+    print('Their score was...')
+    time.sleep(1.5)
+    print(second_place[1])
+    print('Third place is...')
+    time.sleep(1.0)
+    print(third_place[0])
+    print('Their score was...')
+    time.sleep(1.0)
+    print(third_place[1])
 
 
 def menu_selection():
@@ -377,13 +374,12 @@ def menu_selection():
     while True:
         option = input("")
         if option not in ["p", "r", "q", "l"]:
-            print('''
-                ༻✦༺ So sorry! ༻✦༺
-        It appears you have not chosen 'p', 'r'
-        or 'q' and have entirely missed the mark
-        with something random! Please try again!
-                      (✿◠‿◠)\n
-            ''')
+                print("""
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen 'p',
+ 'r', 'l' or 'q'  Please try again!
+        (✿◠‿◠)\n
+                """)
         else:
             if option == 'p':
                 quiz_management()
@@ -395,11 +391,10 @@ def menu_selection():
                 initial_start()
             else:
                 print("""
-                 ༻✦༺ So sorry! ༻✦༺
-        It appears you have not chosen 'p', 'r'
-        or 'q' and have entirely missed the mark
-        with something random! Please try again!
-                      (✿◠‿◠)\n
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen 'p',
+ 'r', 'l' or 'q'  Please try again!
+        (✿◠‿◠)\n
                 """)
                 continue
 
