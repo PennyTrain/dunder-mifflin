@@ -76,6 +76,26 @@
 * I ran my questions.py file code through this validator [Pep8 validator](https://pep8ci.herokuapp.com/#)
 ![Screenshot of the questions.py file validator](./assets/imgs/readme/python-validator-questions.png)
 
+* Test case 1
+* Testing the initial start input
+---
+![Screenshot of test case 1](./assets/imgs/readme/initial-start-test.png)
+
+* Test case 2 
+* Testing the input of the main menu, such as r displaying rules, q displaying the initial start and p displaying the quiz. Along with that when a button besides r, q, or p the message the computer displays explaining why it is not acceptable.
+![Screenshot of test case 2](./assets/imgs/readme/main-menu-test.png)
+
+* Test case 3
+* Testing the input of the question selection button, making sure that the answer is one of 5, 10, or 15. When the answer is invalid that the correct response displays.
+![Screenshot of test case 3](./assets/imgs/readme/question-selection-test.png)
+
+* Test case 4 
+* Testing the input to ensure the username is longer than 2 letters, ensuring that when the insufficient amount of characters are inputted the computer prints out the correct response.
+![Screenshot of test case 4](./assets/imgs/readme/username-test.png)
+
+* Test case 5
+* Testing the input, entered a, b or c to test whether the answer was right or wrong, along with if a, b or c was not entered and it was something random that the computer responds appropriately.
+![Screenshot of test case 5](./assets/imgs/readme/quiz-test.png)
 
 
 
@@ -84,6 +104,11 @@
 
 
 
+
+
+
+### Notable Bugs
+* While playing the quiz I noticed that when the answer was right it would repeat the same question again, however when the question was wrong it would then change and display a new question, at first I believed there was something wrong in the logic where it decided if a question answer was right or wrong... It turned out to be that I was only incrementing i when the question was wrong and not when the question was right.
 
 ### Deployment
 The site was deployed via Heroku, and the live link can be found here - [MY QUIZ]()
