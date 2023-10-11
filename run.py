@@ -63,9 +63,11 @@ def main_menu():
         ‿︵‿︵ʚ˚̣̣̣͙ɞ・❉  Main Menu  ❉・ ʚ˚̣̣̣͙ɞ‿︵‿︵\n
                          Play😍\n
                          Rules📃\n
+                         LeaderBoard\n
                          Quit😰\n
         *+:｡.｡  Please type "p" to play  ｡.｡:+*
         *+:｡.｡  Please type "r" for rules  ｡.｡:+*
+        *+:｡.｡  Please type "l" for leaderboard  ｡.｡:+*
         *+:｡.｡  Please type "q" to quit  ｡.｡:+*\n
     """)
     menu_selection()
@@ -115,34 +117,7 @@ def quiz_management():
     question_amount = get_question_amount()
     questions = get_question_randomer(question_amount)
     score = get_show_question(questions, question_amount)
-    game_ending = end_of_game(score, question_amount)
-
-
-def end_of_game(score, question_amount):
-    clear()
-    print(f"""
-            End Of Game!
-Your score was: {score}/{question_amount}
-        Would you like to play
-                again?
-        If so please press 'z'
-    """)
-    try:
-        while True:
-            return_to_menu = input("")
-            if return_to_menu == "z":
-                main_menu()
-            else:
-                raise Exception
-    except Exception:
-        print("""
-                ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen 'z'
-         and have entirely missed the mark
-        with something random! Please try again!
-                      (✿◠‿◠)\n
-         """)
-    time.sleep(5.0)
+    game_ending = end_of_game(score, question_amount, username)
 
 
 def get_username():
@@ -267,6 +242,131 @@ def get_check_answer(questions):
         return "c"
 
 
+def end_of_game(score, question_amount, username):
+    leaderboard_update(username, score, question_amount)
+    time.sleep(3.0)
+    clear()
+    print(f"""
+            End Of Game!
+    Your score was: {score}/{question_amount}
+        Would you like to return to the main menu
+                ?
+        If so please press 'z'
+    """)
+    while True:
+        return_to_menu = input("")
+        if return_to_menu == "z":
+            main_menu()
+            break
+        else:
+            print("""
+                ༻✦༺ So sorry! ༻✦༺
+         It appears you have not chosen 'z'
+         and have entirely missed the mark
+        with something random! Please try again!
+                      (✿◠‿◠)\n
+         """)
+
+
+def leaderboard_update(username, score, question_amount):
+    if question_amount == 5:
+        score_sheet_five = SHEET.worksheet('leaderboard-5')
+        score_sheet_five.append_row([username, score])
+    elif question_amount == 10:
+        score_sheet_ten = SHEET.worksheet('leaderboard-10')
+        score_sheet_ten.append_row([username, score])
+    elif question_amount == 15:
+        score_sheet_fifteen = SHEET.worksheet('leaderboard-15')
+        score_sheet_fifteen.append_row([username, score])
+
+
+def leaderboard_choice():
+    clear()
+    print("""
+        Which leaderboard would you like to view?
+        Enter 5 for:
+         5 question rounds
+        Enter 10 for:
+         10 question rounds
+        Enter 15 for:
+         15 question rounds
+    """)
+    leaderboard_selection()
+
+
+def leaderboard_selection():
+    while True:
+        option = input("")
+        if option not in ["5", "10", "15"]:
+            print('''
+                ༻✦༺ So sorry! ༻✦༺
+        It appears you have not chosen '1', '2'
+        or '3' and have entirely missed the mark
+        with something random! Please try again!
+                      (✿◠‿◠)\n
+            ''')
+        else:
+            if option == '5':
+                users_choice = 5
+                leaderboard_screen(users_choice)
+            elif option == '10':
+                users_choice = 10
+                leaderboard_screen(users_choice)
+            elif option == '15':
+                users_choice = 15
+                leaderboard_screen(users_choice)
+            else:
+                print("""
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen '1',
+ '2' or '3'  Please try again!
+        (✿◠‿◠)\n
+                """)
+                continue
+
+
+def get_scoresheet_list(rounds, position):
+    """
+    Gets the values of all the worksheets
+    5 - 10 - 15 and puts them in ascending order
+    """
+    if rounds == 5:
+        worksheet = SHEET.worksheet('leaderboard-5')
+    elif rounds == 10:
+        worksheet = SHEET.worksheet('leaderboard-10')
+    elif rounds == 15:
+        worksheet = SHEET.worksheet('leaderboard-15')
+    worksheet_values = worksheet.get_all_values()
+    score = worksheet_values
+    length_score = len(score)
+    for i in range(0, length_score):
+        for j in range(0, length_score-i-1):
+            if (int(score[j][1]) > int(score[j + 1][1])):
+                tempo = score[j]
+                score[j] = score[j + 1]
+                score[j + 1] = tempo
+    return score[length_score - (position)]
+
+
+def leaderboard_screen(users_choice):
+    clear()
+    print("Leader screen")
+    # THIS IS GETTING MY ARRAY OF FIRST SECOND AND THIRD PLACE AND PRINTING OUT
+    first_place = get_scoresheet_list(users_choice, 1)
+    second_place = get_scoresheet_list(users_choice, 2)
+    third_place = get_scoresheet_list(users_choice, 3)
+    print(first_place)
+    print(second_place)
+    print(third_place)
+    print('First place is:')
+    time.sleep(1.0)
+    print(first_place[0])
+    print('Their score was:')
+    print(first_place[1])
+    print(second_place[0], second_place[1])
+    print(third_place[0], third_place[1])
+
+
 def menu_selection():
     """
     This function allows players to choose
@@ -276,7 +376,7 @@ def menu_selection():
     """
     while True:
         option = input("")
-        if option not in ["p", "r", "q"]:
+        if option not in ["p", "r", "q", "l"]:
             print('''
                 ༻✦༺ So sorry! ༻✦༺
         It appears you have not chosen 'p', 'r'
@@ -289,6 +389,8 @@ def menu_selection():
                 quiz_management()
             elif option == 'r':
                 rules()
+            elif option == 'l':
+                leaderboard_choice()
             elif option == 'q':
                 initial_start()
             else:
@@ -300,13 +402,6 @@ def menu_selection():
                       (✿◠‿◠)\n
                 """)
                 continue
-
-
-
-
-
-
-
 
 
 initial_start()
