@@ -214,13 +214,13 @@ def get_player_input():
             else:
                 raise Exception
         except Exception:
-                print("""
+            print("""
     ༻✦༺ So sorry! ༻✦༺
 It appears you have not chosen 'a',
  'b' or 'c'  Please try again!
         (✿◠‿◠)\n
                 """)
-                time.sleep(3.0)
+            time.sleep(3.0)
 
 
 def get_check_answer(questions):
@@ -286,7 +286,7 @@ def leaderboard_selection():
     while True:
         option = input("")
         if option not in ["5", "10", "15"]:
-                print("""
+            print("""
     ༻✦༺ So sorry! ༻✦༺
 It appears you have not chosen '5',
  '10' or '15'  Please try again!
@@ -374,7 +374,7 @@ def menu_selection():
     while True:
         option = input("")
         if option not in ["p", "r", "q", "l"]:
-                print("""
+            print("""
     ༻✦༺ So sorry! ༻✦༺
 It appears you have not chosen 'p',
  'r', 'l' or 'q'  Please try again!
