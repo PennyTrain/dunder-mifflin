@@ -87,23 +87,19 @@ def rules():
     Press 'm' to return to the
            main menu!\n
     """)
-    try:
-        while True:
-            return_to_menu = input("")
-            if return_to_menu == "m":
-                main_menu()
-            else:
-                raise Exception
-    except Exception:
-        print("""
+    while True:
+        return_to_menu = input("")
+        if return_to_menu == "m":
+            main_menu()
+            break
+        else:
+            print("""
                 ༻✦༺ So sorry! ༻✦༺
          It appears you have not chosen 'm'
          and have entirely missed the mark
         with something random! Please try again!
                       (✿◠‿◠)\n
          """)
-        time.sleep(3.0)
-        main_menu()
 
 
 def quit():
