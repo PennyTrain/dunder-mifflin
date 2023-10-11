@@ -237,21 +237,36 @@ def end_of_game(score, question_amount, username):
     time.sleep(3.0)
     clear()
     print(f"""
-            End Of Game!
-    Your score was: {score}/{question_amount}
-        Would you like to return to the main menu
-                ?
-        If so please press 'z'
+★ ° . *   ° . °☆  . * ● , ● , .    ★ 
+.    ★  ° :. ★  * • ○ ° ★ ★  * • ○ ° ★ 
+
+             End Of Game!
+.  *  .       .   
+°  . ● . ★ ° . *   ° . °☆ ★  * • ○ ° ★ 
+
+Your score was: {score}/{question_amount}
+
+ . * ● , .    ★  ° :●.   * ● , .    ★ 
+• ○ ° ★  .  *  .       .★  * • ○ ° ★ 
+   °  . ● . ★ ° . *   ° .:.☆★  *
+
+Would you like to return to the main menu?
+    If so please press 'm'
+
+°☆  . * ● , .    ★ ● , .    ★ ● , .    ★ 
+° :.   * • ○ ° ★  .  *  .
+ ★   .   °  .  .     ★ ★  * • ○ ° ★ ° ★
+
     """)
     while True:
         return_to_menu = input("")
-        if return_to_menu == "z":
+        if return_to_menu == "m":
             main_menu()
             break
         else:
             print("""
     ༻✦༺ So sorry! ༻✦༺
-It appears you have not chosen 'z',
+It appears you have not chosen 'm',
 Please try again!(✿◠‿◠)\n
                 """)
 
@@ -338,7 +353,13 @@ def get_scoresheet_list(rounds, position):
 def leaderboard_screen(users_choice):
     clear()
     print("""
-    Leaderboard
+    ──────▄▀▄─────▄▀▄
+─────▄█░░▀▀▀▀▀░░█▄
+─▄▄──█░░░░░░░░░░░█──▄▄
+█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█
+»»———————-—★————————-««
+      Leaderboard
+»»———————-—★————————-««
     """)
     # THIS IS GETTING MY ARRAY OF FIRST SECOND AND THIRD PLACE AND PRINTING OUT
     first_place = get_scoresheet_list(users_choice, 1)
@@ -346,22 +367,44 @@ def leaderboard_screen(users_choice):
     third_place = get_scoresheet_list(users_choice, 3)
     print('First place is...')
     time.sleep(2.0)
-    print(first_place[0])
+    print(f'{first_place[0]}\n')
+    time.sleep(1.0)
     print('Their score was...')
     time.sleep(2.0)
-    print(first_place[1])
+    print(f'{first_place[1]}\n')
+    time.sleep(1.0)
     print('Second place is...')
     time.sleep(1.5)
-    print(second_place[0])
+    print(f'{second_place[0]}\n')
+    time.sleep(1.0)
     print('Their score was...')
     time.sleep(1.5)
-    print(second_place[1])
+    print(f'{second_place[1]}\n')
+    time.sleep(1.0)
     print('Third place is...')
     time.sleep(1.0)
-    print(third_place[0])
+    print(f'{third_place[0]}\n')
+    time.sleep(1.0)
     print('Their score was...')
     time.sleep(1.0)
-    print(third_place[1])
+    print(f'{third_place[1]}\n')
+    time.sleep(1.0)
+    print("""
+    When your done seeing the scores,
+    press 'm' to return to the main
+    menu!
+    """)
+    while True:
+        return_to_menu = input("")
+        if return_to_menu == "m":
+            main_menu()
+            break
+        else:
+            print("""
+    ༻✦༺ So sorry! ༻✦༺
+It appears you have not chosen 'm',
+Please try again!(✿◠‿◠)\n
+                """)
 
 
 def menu_selection():
