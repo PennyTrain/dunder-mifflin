@@ -237,23 +237,23 @@ def end_of_game(score, question_amount, username):
     time.sleep(3.0)
     clear()
     print(f"""
-★ ° . *   ° . °☆  . * ● , ● , .    ★ 
-.    ★  ° :. ★  * • ○ ° ★ ★  * • ○ ° ★ 
+★ ° . *   ° . °☆  . * ● , ● , .    ★
+.    ★  ° :. ★  * • ○ ° ★ ★  * • ○ ° ★
 
              End Of Game!
-.  *  .       .   
-°  . ● . ★ ° . *   ° . °☆ ★  * • ○ ° ★ 
+.  *  .       .
+°  . ● . ★ ° . *   ° . °☆ ★  * • ○ ° ★
 
 Your score was: {score}/{question_amount}
 
- . * ● , .    ★  ° :●.   * ● , .    ★ 
-• ○ ° ★  .  *  .       .★  * • ○ ° ★ 
+ . * ● , .    ★  ° :●.   * ● , .    ★
+• ○ ° ★  .  *  .       .★  * • ○ ° ★
    °  . ● . ★ ° . *   ° .:.☆★  *
 
 Would you like to return to the main menu?
     If so please press 'm'
 
-°☆  . * ● , .    ★ ● , .    ★ ● , .    ★ 
+°☆  . * ● , .    ★ ● , .    ★ ● , .    ★
 ° :.   * • ○ ° ★  .  *  .
  ★   .   °  .  .     ★ ★  * • ○ ° ★ ° ★
 
@@ -286,13 +286,17 @@ def leaderboard_update(username, score, question_amount):
 def leaderboard_choice():
     clear()
     print("""
-        Which leaderboard would you like to view?
-        Enter 5 for:
-         5 question rounds
-        Enter 10 for:
-         10 question rounds
-        Enter 15 for:
-         15 question rounds
+Which leaderboard would you like to view?
+꒱࿐♡ ˚.*ೃ꒱࿐♡ ˚.*ೃ꒱࿐♡ ˚.*ೃ꒱࿐♡ ˚.*ೃ
+
+Enter 5 for:
+5 question rounds
+
+Enter 10 for:
+10 question rounds
+
+Enter 15 for:
+15 question rounds
     """)
     leaderboard_selection()
 

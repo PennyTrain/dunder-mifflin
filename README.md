@@ -97,7 +97,13 @@
 * Testing the input, entered a, b or c to test whether the answer was right or wrong, along with if a, b or c was not entered and it was something random that the computer responds appropriately.
 ![Screenshot of test case 5](./assets/imgs/readme/quiz-test.png)
 
+* Test case 6
+* Testing the input, ensuring that the correct leaderboard will be displayed depending on whether the player enter 5, 10 or 15.
+![Screenshot of test case 6](./assets/imgs/readme/leaderboard-test.png)
 
+* Test case 7 
+* Testing the input, checking that the correct message is displayed when the wrong input is entered.
+![Sceenoshot of test case 7](./assets/imgs/readme/end-game-test.png)
 
 
 
