@@ -38,23 +38,19 @@ def initial_start():
     print("Are you ready the best Dunder Mifflin quiz?🥰\n")
     print("｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡\n")
     print("Please press 's' when you are ready to start!\n")
-    try:
-        while True:
-            return_to_menu = input("")
-            if return_to_menu == "s":
-                main_menu()
-            else:
-                raise Exception
-    except Exception:
-        print("""
+    while True:
+        return_to_menu = input("")
+        if return_to_menu == "s":
+            main_menu()
+            break
+        else:
+            print("""
                 ༻✦༺ So sorry! ༻✦༺
          It appears you have not chosen 's'
          and have entirely missed the mark
         with something random! Please try again!
                       (✿◠‿◠)\n
          """)
-        time.sleep(2.0)
-        initial_start()
 
 
 def main_menu():
@@ -141,7 +137,7 @@ Your score was: {score}/{question_amount}
     except Exception:
         print("""
                 ༻✦༺ So sorry! ༻✦༺
-         It appears you have not chosen 'p'
+         It appears you have not chosen 'z'
          and have entirely missed the mark
         with something random! Please try again!
                       (✿◠‿◠)\n
@@ -180,7 +176,7 @@ def get_question_amount():
     while True:
         try:
             question_amount = int(input("""
-            Please choose how many questions you would like! 5, 10 or 15?\n
+Please choose how many questions you would like! 5, 10 or 15?\n
             """))
             if question_amount in valid_choices:
                 print(f"""
@@ -278,32 +274,39 @@ def menu_selection():
     It also raises an exception if their input
     is not valid and recognized by the code.
     """
-    try:
-        while True:
-            option = input("")
-            if option not in ["p", "r", "q"]:
-                raise Exception
-            else:
-                if option == 'p':
-                    quiz_management()
-                    break
-                elif option == 'r':
-                    rules()
-                    break
-                elif option == 'q':
-                    initial_start()
-                    break
-    except Exception:
-        print('''
+    while True:
+        option = input("")
+        if option not in ["p", "r", "q"]:
+            print('''
                 ༻✦༺ So sorry! ༻✦༺
         It appears you have not chosen 'p', 'r'
         or 'q' and have entirely missed the mark
         with something random! Please try again!
                       (✿◠‿◠)\n
-         ''')
+            ''')
+        else:
+            if option == 'p':
+                quiz_management()
+            elif option == 'r':
+                rules()
+            elif option == 'q':
+                initial_start()
+            else:
+                print("""
+                 ༻✦༺ So sorry! ༻✦༺
+        It appears you have not chosen 'p', 'r'
+        or 'q' and have entirely missed the mark
+        with something random! Please try again!
+                      (✿◠‿◠)\n
+                """)
+                continue
 
-        time.sleep(3.0)
-        main_menu()
+
+
+
+
+
+
 
 
 initial_start()
