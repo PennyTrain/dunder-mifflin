@@ -36,6 +36,8 @@ def initial_start():
     """
     clear()
     print("Are you ready the best Dunder Mifflin quiz?🥰\n")
+    print("Trivia all about The Office! The American")
+    print("version!\n")
     print("｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡\n")
     print("Please press 's' when you are ready to start!\n")
     while True:
@@ -61,7 +63,7 @@ def main_menu():
         ‿︵‿︵ʚ˚̣̣̣͙ɞ・❉  Main Menu  ❉・ ʚ˚̣̣̣͙ɞ‿︵‿︵\n
                          Play😍\n
                          Rules📃\n
-                         LeaderBoard\n
+                      LeaderBoard🏅\n
                          Quit😰\n
         *+:｡.｡  Please type "p" to play  ｡.｡:+*
         *+:｡.｡  Please type "r" for rules  ｡.｡:+*
@@ -148,8 +150,8 @@ Please choose how many questions you would like! 5, 10 or 15?\n
             """))
             if question_amount in valid_choices:
                 print(f"""
-You have chosen to have
-𓆩*𓆪 {question_amount} 𓆩*𓆪 questions!\n""")
+You have chosen to have 𓆩*𓆪 {question_amount} 𓆩*𓆪 questions!\n
+""")
                 return question_amount
             else:
                 print("""
@@ -289,14 +291,18 @@ def leaderboard_choice():
 Which leaderboard would you like to view?
 ꒱࿐♡ ˚.*ೃ꒱࿐♡ ˚.*ೃ꒱࿐♡ ˚.*ೃ꒱࿐♡ ˚.*ೃ
 
-Enter 5 for:
-5 question rounds
+            Leaderboard 1
+                 ❁
+      For all 5 question rounds
 
-Enter 10 for:
-10 question rounds
+            Leaderboard 2
+                 ❁
+      For all 10 question rounds
 
-Enter 15 for:
-15 question rounds
+            Leaderboard 3
+                 ❁
+      For all 15 question rounds
+
     """)
     leaderboard_selection()
 
@@ -371,7 +377,7 @@ def leaderboard_screen(users_choice):
     third_place = get_scoresheet_list(users_choice, 3)
     print('First place is...')
     time.sleep(2.0)
-    print(f'{first_place[0]}\n')
+    print(f'♕🥇  {first_place[0]}  ♕\n')
     time.sleep(1.0)
     print('Their score was...')
     time.sleep(2.0)
@@ -379,7 +385,7 @@ def leaderboard_screen(users_choice):
     time.sleep(1.0)
     print('Second place is...')
     time.sleep(1.5)
-    print(f'{second_place[0]}\n')
+    print(f'🥈  {second_place[0]}\n')
     time.sleep(1.0)
     print('Their score was...')
     time.sleep(1.5)
@@ -387,7 +393,7 @@ def leaderboard_screen(users_choice):
     time.sleep(1.0)
     print('Third place is...')
     time.sleep(1.0)
-    print(f'{third_place[0]}\n')
+    print(f'🥉  {third_place[0]}\n')
     time.sleep(1.0)
     print('Their score was...')
     time.sleep(1.0)
