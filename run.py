@@ -192,7 +192,7 @@ def get_show_question(questions, question_amount):
         that prints the three choices in the question
         """
         for j, choice in enumerate(questions[i]["answers"]):
-            print(f"{j + 1}. {choice}")
+            print(f"{choice}")
         player_answer = get_player_input()
         answer_result = get_check_answer(questions[i])
         if player_answer == answer_result:
