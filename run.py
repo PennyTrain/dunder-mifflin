@@ -78,7 +78,7 @@ def rules():
     print(
         """
               Rules
-    ｡☆✼★━━━━━━━━━━━━★✼☆｡
+    ｡☆✼★━━━━━━━━━━━━━━★✼☆｡
     Once you have chosen your
     answer to a question please
     select 'a', 'b' or 'c'.

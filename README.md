@@ -56,6 +56,22 @@
 
 ### Features
 ---
+* The main menu is equipt with fun emoticons!
+---
+![Screenshot of the main menu](./assets/imgs/readme/main-menu.png)
+
+* There is a working leaderboard inside the game, well 3 different leaderboards! You can choose if you want to see the ranking of games with 5, 10 or 15 rounds!
+---
+![Screenshot of the username choice](./assets/imgs/readme/leaderboard-choice.png)
+
+* The leaderboard in the game is equipt with fun emoticons and text decoration. Along with that there are delays in printing out the leaderboard to rake up suspense, these pauses cannot be captured in a screenshot so you will just have to play the quiz!
+---
+![Screenshot of the leaderboard](./assets/imgs/readme/leaderboard.png)
+
+* Dunder Mifflin also has its own set of rules equipt with cute text decoration!
+---
+![Screenshot of the rules](./assets/imgs/readme/rules)
+
 * Inside the quiz it will enable you to choose a username!
 ---
 ![Screenshot of the username function in action](./assets/imgs/readme/username.png)
@@ -68,13 +84,34 @@
 ---
 ![Screenshot of a question in the quiz](./assets/imgs/readme/random-questions.png)
 
+
+
 ### Testing
 ---
+#### Python Validators
 * I ran my run.py file code through this validator [Pep8 validator](https://pep8ci.herokuapp.com/#)
 ![Screenshot of the run.py file validator](./assets/imgs/readme/python-validator-run.png)
 
 * I ran my questions.py file code through this validator [Pep8 validator](https://pep8ci.herokuapp.com/#)
 ![Screenshot of the questions.py file validator](./assets/imgs/readme/python-validator-questions.png)
+
+#### Javascript Validators
+* I ran the index.js file code through this validator [Javascript Hint](https://jshint.com./)
+![Screenshot of the index.js file validator](./assets/imgs/readme/index-js-validator.png)
+
+* I ran the default.js file code through this validator [Javascript Hint](https://jshint.com)
+![Screenshot of the default.js file validator](./assets/imgs/readme/default-js-validator.png)
+
+* I have noticed that this code has errors however these are the files provided by the code institute project 3 template and not my code.
+
+#### HTML Validators
+* I ran the index.html file code through this validator [W3 Validator](https://validator.w3.org/)
+![Screenshot of the index.html file validator](./assets/imgs/readme/index-html-validator.png)
+
+* I ran the layout.html file code through this validator [W3 Validator](https://validator.w3.org/)
+![Screenshot of the layout.html file validator](./assets/imgs/readme/layout-html-validator.png)
+
+* I have noticed that this code has errors however these are the files provided by the code institute project 3 template and not my code.
 
 * Test case 1
 * Testing the initial start input
