@@ -39,7 +39,7 @@ def initial_start():
     print("｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡\n")
     print("Please press 's' when you are ready to start!\n")
     while True:
-        return_to_menu = input("")
+        return_to_menu = input("").strip().lower()
         if return_to_menu == "s":
             main_menu()
             break
@@ -84,7 +84,7 @@ def rules():
            main menu!\n
     """)
     while True:
-        return_to_menu = input("")
+        return_to_menu = input("").strip().lower()
         if return_to_menu == "m":
             main_menu()
             break
@@ -121,7 +121,7 @@ def get_username():
     Gets the player's username and ensures it is longer than 2 characters.
     """
     while True:
-        username = input("Enter username: ")
+        username = input("Enter username: ").strip().lower()
         if len(username) >= 2:
             print(f'Hello and welcome, {username}! ♥‿♥\n')
             return username
@@ -208,7 +208,7 @@ def get_player_input():
     print("Please select (a, b, c):\n")
     while True:
         try:
-            player_answer = input("")
+            player_answer = input("").strip().lower()
             if player_answer in ['a', 'b', 'c']:
                 return player_answer
             else:
@@ -259,7 +259,7 @@ Would you like to return to the main menu?
 
     """)
     while True:
-        return_to_menu = input("")
+        return_to_menu = input("").strip().lower()
         if return_to_menu == "m":
             main_menu()
             break
@@ -303,7 +303,7 @@ Enter 15 for:
 
 def leaderboard_selection():
     while True:
-        option = input("")
+        option = input("").strip().lower()
         if option not in ["5", "10", "15"]:
             print("""
     ༻✦༺ So sorry! ༻✦༺
@@ -399,7 +399,7 @@ def leaderboard_screen(users_choice):
     menu!
     """)
     while True:
-        return_to_menu = input("")
+        return_to_menu = input("").strip().lower()
         if return_to_menu == "m":
             main_menu()
             break
@@ -419,7 +419,7 @@ def menu_selection():
     is not valid and recognized by the code.
     """
     while True:
-        option = input("")
+        option = input("").strip().lower()
         if option not in ["p", "r", "q", "l"]:
             print("""
     ༻✦༺ So sorry! ༻✦༺
