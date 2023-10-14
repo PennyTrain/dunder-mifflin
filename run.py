@@ -115,7 +115,6 @@ def quiz_management():
     question_amount = get_question_amount()
     questions = get_question_randomer(question_amount)
     score = get_show_question(questions, question_amount)
-    time.sleep(3.0)
     game_ending = end_of_game(score, question_amount, username)
 
 
