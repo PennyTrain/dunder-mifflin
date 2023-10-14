@@ -40,7 +40,6 @@
 * The flow chart is made to demonstrate how the games functionality was planned. However since, after the game has been played it goes back to the inital start.
 ![The flow chart](./assets/imgs/readme/flow-chart.png)
 
-
 ### Languages Used
 
 * [HTML](https://en.wikipedia.org/wiki/HTML)
