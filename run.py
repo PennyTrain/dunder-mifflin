@@ -115,6 +115,8 @@ def quiz_management():
     question_amount = get_question_amount()
     questions = get_question_randomer(question_amount)
     score = get_show_question(questions, question_amount)
+    time.sleep(2.0)
+    clear()
     game_ending = end_of_game(score, question_amount, username)
 
 
@@ -236,7 +238,6 @@ def get_check_answer(questions):
 
 def end_of_game(score, question_amount, username):
     leaderboard_update(username, score, question_amount)
-    clear()
     print(f"""
 ★ ° . *   ° . °☆  . * ● , ● , .    ★
 .    ★  ° :. ★  * • ○ ° ★ ★  * • ○ ° ★
