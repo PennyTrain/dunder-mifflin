@@ -134,7 +134,7 @@ It appears your username is too
 short Please try again!
         (✿◠‿◠)\n
                 """)
-        time.sleep(3.0)
+        time.sleep(2.0)
 
 
 def get_question_amount():
@@ -160,7 +160,7 @@ It appears you have not chosen '5',
  '10' or '15'  Please try again!
         (✿◠‿◠)\n
                 """)
-                time.sleep(3.0)
+                time.sleep(2.0)
         except ValueError:
             print("""
     ༻✦༺ So sorry! ༻✦༺
@@ -168,7 +168,7 @@ It appears you have not chosen '5',
  '10' or '15'  Please try again!
         (✿◠‿◠)\n
                 """)
-        time.sleep(3.0)
+        time.sleep(2.0)
 
 
 def get_question_randomer(question_amount):
@@ -202,9 +202,9 @@ def get_show_question(questions, question_amount):
             score += 1
         else:
             print("Oh no you got it wrong, unlucky!(๑•́_•̀๑)\n")
-        time.sleep(1.8)
-        clear()
         i += 1
+    time.sleep(1.8)
+    clear()
     return score
     
 
@@ -225,7 +225,6 @@ It appears you have not chosen 'a',
  'b' or 'c'  Please try again!
         (✿◠‿◠)\n
                 """)
-            time.sleep(3.0)
 
 
 def get_check_answer(questions):
