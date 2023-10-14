@@ -24,7 +24,7 @@ def clear():
     """
     This clears the terminal ready for new content!
     """
-    os.system("cls" if os.name == "nt" else "clear")
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def initial_start():
@@ -202,8 +202,11 @@ def get_show_question(questions, question_amount):
             score += 1
         else:
             print("Oh no you got it wrong, unlucky!(๑•́_•̀๑)\n")
+        time.sleep(1.8)
+        clear()
         i += 1
     return score
+    
 
 
 def get_player_input():
@@ -236,7 +239,6 @@ def get_check_answer(questions):
 
 def end_of_game(score, question_amount, username):
     leaderboard_update(username, score, question_amount)
-    clear()
     print(f"""
 ★ ° . *   ° . °☆  . * ● , ● , .    ★
 .    ★  ° :. ★  * • ○ ° ★ ★  * • ○ ° ★
