@@ -3,9 +3,9 @@
 ## Introduction
 
 * The Dunder Mifflin quiz is inspired by a very popular American TV show such as The Office, the quiz asks a range of trivia questions derived from the show. 
-[View live project here]()
+[View live project here](https://dunder-mifflin-e30bce70657f.herokuapp.com/)
 * As the game was developed in Python for use in the terminal, it utilizes the Code Institute Python Template to generate a "terminal" onto the page, making it available within a web browser.
-![Screenshot of the initial start in the terminal](./assets/imgs/readme/initial_start.png)
+![Screenshot of the initial start in the terminal](./assets/imgs/readme/initial-start.png)
 
 ## User Experience
 
@@ -69,7 +69,7 @@
 
 * Dunder Mifflin also has its own set of rules equipt with cute text decoration!
 ---
-![Screenshot of the rules](./assets/imgs/readme/rules)
+![Screenshot of the rules](./assets/imgs/readme/rules.png)
 
 * Inside the quiz it will enable you to choose a username!
 ---

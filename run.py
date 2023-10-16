@@ -208,14 +208,14 @@ def get_show_question(questions, question_amount):
     return score
     
 
-
 def get_player_input():
+    player_answer = ""
     print("Please select (a, b, c):\n")
     while True:
         try:
             player_answer = input("").strip().lower()
             if player_answer in ['a', 'b', 'c']:
-                return player_answer
+                break
             else:
                 raise Exception
         except Exception:
@@ -225,6 +225,7 @@ It appears you have not chosen 'a',
  'b' or 'c'  Please try again!
         (✿◠‿◠)\n
                 """)
+    return player_answer 
 
 
 def get_check_answer(questions):
