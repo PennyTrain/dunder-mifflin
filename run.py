@@ -204,7 +204,6 @@ def get_show_question(questions, question_amount):
             print("Oh no you got it wrong, unlucky!(๑•́_•̀๑)\n")
         i += 1
     time.sleep(1.8)
-    clear()
     return score
     
 
@@ -239,6 +238,7 @@ def get_check_answer(questions):
 
 def end_of_game(score, question_amount, username):
     leaderboard_update(username, score, question_amount)
+    clear()
     print(f"""
 ★ ° . *   ° . °☆  . * ● , ● , .    ★
 .    ★  ° :. ★  * • ○ ° ★ ★  * • ○ ° ★
