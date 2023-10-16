@@ -36,9 +36,9 @@ def initial_start():
     """
     clear()
     print("Are you ready the best Dunder Mifflin quiz?🥰\n")
+    print("｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡\n")
     print("Trivia all about The Office! The American")
     print("version!\n")
-    print("｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡\n")
     print("Please press 's' when you are ready to start!\n")
     while True:
         return_to_menu = input("").strip().lower()
@@ -305,6 +305,8 @@ Which leaderboard would you like to view?
                  ❁
       For all 15 question rounds
 
+Please enter 5, 10 or 15 based on your 
+preferance! 
     """)
     leaderboard_selection()
 
