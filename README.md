@@ -57,26 +57,32 @@
 * The main menu is equipt with fun emoticons!
 ---
 ![Screenshot of the main menu](./assets/imgs/readme/main-menu.png)
+---
 
 * There is a working leaderboard inside the game, well 3 different leaderboards! You can choose if you want to see the ranking of games with 5, 10 or 15 rounds!
 ---
 ![Screenshot of the username choice](./assets/imgs/readme/leaderboard-choice.png)
+---
 
 * The leaderboard in the game is equipt with fun emoticons and text decoration. Along with that there are delays in printing out the leaderboard to rake up suspense, these pauses cannot be captured in a screenshot so you will just have to play the quiz!
 ---
 ![Screenshot of the leaderboard](./assets/imgs/readme/leaderboard.png)
+---
 
 * Dunder Mifflin also has its own set of rules equipt with cute text decoration!
 ---
 ![Screenshot of the rules](./assets/imgs/readme/rules.png)
+---
 
 * Inside the quiz it will enable you to choose a username!
 ---
 ![Screenshot of the username function in action](./assets/imgs/readme/username.png)
+---
 
 * The quiz enables you to choose how many questions you would like
 ---
 ![Screenshot of the question choice function in action](./assets/imgs/readme/question-selection.png)
+---
 
 * Along with that the questions are randomized, therefore players will not recieve the same question inside the same quiz. As well as that when the game is next played there will be a variety of questions available!
 ---
@@ -134,6 +140,7 @@
 * Test case 6
 * Testing the input, ensuring that the correct leaderboard will be displayed depending on whether the player enter 5, 10 or 15.
 ![Screenshot of test case 6](./assets/imgs/readme/leaderboard-test.png)
+* When reading through my readme, I realize in this screenshot I did not include the input of 'm' that takes you back to the main menu, but I can confirm it works!
 
 * Test case 7 
 * Testing the input, checking that the correct message is displayed when the wrong input is entered.
