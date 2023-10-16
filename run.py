@@ -115,6 +115,7 @@ def quiz_management():
     question_amount = get_question_amount()
     questions = get_question_randomer(question_amount)
     score = get_show_question(questions, question_amount)
+    time.sleep(1.8)
     game_ending = end_of_game(score, question_amount, username)
 
 
@@ -203,7 +204,6 @@ def get_show_question(questions, question_amount):
         else:
             print("Oh no you got it wrong, unlucky!(๑•́_•̀๑)\n")
         i += 1
-    time.sleep(1.8)
     return score
     
 
@@ -264,6 +264,7 @@ Would you like to return to the main menu?
     while True:
         return_to_menu = input("").strip().lower()
         if return_to_menu == "m":
+            clear()
             main_menu()
             break
         else:
