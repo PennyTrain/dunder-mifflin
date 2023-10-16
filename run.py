@@ -205,7 +205,7 @@ def get_show_question(questions, question_amount):
             print("Oh no you got it wrong, unlucky!(๑•́_•̀๑)\n")
         i += 1
     return score
-    
+
 
 def get_player_input():
     player_answer = ""
@@ -224,7 +224,7 @@ It appears you have not chosen 'a',
  'b' or 'c'  Please try again!
         (✿◠‿◠)\n
                 """)
-    return player_answer 
+    return player_answer
 
 
 def get_check_answer(questions):

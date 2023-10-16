@@ -37,7 +37,7 @@
 
 ### Flow Chart
 ---
-* The flow chart is made to demonstrate how the games functionality was planned. However since, after the game has been played it goes back to the inital start.
+* The flow chart is made to demonstrate how the games functionality was planned.
 ![The flow chart](./assets/imgs/readme/flow-chart.png)
 
 ### Languages Used
@@ -49,7 +49,6 @@
 
 ### Future Enhancements
 ---
-* In the future, I would love to add a working leaderboard.
 * In the future, I would add more questions for players so that there were atleast 50+.
 * In the future, I would like to include select question themes, perhaps have questions all about Micheal, Pam or Dwight!
 
@@ -82,7 +81,6 @@
 * Along with that the questions are randomized, therefore players will not recieve the same question inside the same quiz. As well as that when the game is next played there will be a variety of questions available!
 ---
 ![Screenshot of a question in the quiz](./assets/imgs/readme/random-questions.png)
-
 
 
 ### Testing
@@ -142,18 +140,14 @@
 ![Sceenoshot of test case 7](./assets/imgs/readme/end-game-test.png)
 
 
-
-
-
-
-
-
-
 ### Notable Bugs
 * While playing the quiz I noticed that when the answer was right it would repeat the same question again, however when the question was wrong it would then change and display a new question, at first I believed there was something wrong in the logic where it decided if a question answer was right or wrong... It turned out to be that I was only incrementing i when the question was wrong and not when the question was right.
 
+* After deploying my project to Heroku I noticed that my clear functions were not working as I intended them to, I was very confused as in my local terminal my game ran completely fine with no issues and with all the clear()'s working! When my questions finished running I intended the terminal to be cleared, and in the Heroku application it was not. After many hours of trying to fix the issue myself with slack and google I reached out to tutor assist! While talking to them I included many screenshots of my code, my heroku deployment live link and my github repository. 
+![Screenshot of my conversation with tutor assist!](./assets/imgs/readme/tutor-support.png)
+
 ### Deployment
-The site was deployed via Heroku, and the live link can be found here - [MY QUIZ]()
+The site was deployed via Heroku, and the live link can be found here - [Dunder Mifflin](https://dunder-mifflin-e30bce70657f.herokuapp.com/)
 The project was developed utilizing a Code Institute provided template. During the development of the project, the template was updated to increase functionality. I switched over to the new template mid-project which you can see within the commit history. Some of the deployment steps below are specifically required for the new CI template and may not apply to older versions, or different projects.
 Project Deployment
 To deploy the project through Heroku I followed these steps:
