@@ -7,6 +7,15 @@
 * As the game was developed in Python for use in the terminal, it utilizes the Code Institute Python Template to generate a "terminal" onto the page, making it available within a web browser.
 ![Screenshot of the initial start in the terminal](./assets/imgs/readme/initial-start.png)
 
+## How to Play
+
+The Dunder Mifflin quiz will prompt the user to enter a variety of input based on which section they are at.
+The Initial Start will prompt "s"
+The Main Menu will prompt "p", "l", "r" and "q"
+The Quiz will prompt "a", "b", and "c"
+The Question Selection will prompt "5", "10" and "15"
+The username will prompt your response to be longer than a single character
+To go back to the Main Menu it will prompt "m"
 ## User Experience
 
 ### User Stories
@@ -146,6 +155,10 @@
 * Test case 7 
 * Testing the input, checking that the correct message is displayed when the wrong input is entered.
 ![Sceenoshot of test case 7](./assets/imgs/readme/end-game-test.png)
+
+### Accessibility Testing 
+I tested this using the Lighthouose website developer tool!
+![Screenshot of the Lighthouse report](./assets/imgs/readme/lighthouse-report.png)
 
 
 ### Notable Bugs
