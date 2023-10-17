@@ -51,6 +51,7 @@
 ---
 * In the future, I would add more questions for players so that there were atleast 50+.
 * In the future, I would like to include select question themes, perhaps have questions all about Micheal, Pam or Dwight!
+* In the future, I would like to add a difficulty level for all the questions.
 
 ### Features
 ---
@@ -189,7 +190,7 @@ and
 
 ### Content
 
-* The text for all pages was created by myself.
+* The text was created by myself.
 * The reference material on python provided by [w3schools.com](https://www.w3schools.com/)
 
 ### Media
